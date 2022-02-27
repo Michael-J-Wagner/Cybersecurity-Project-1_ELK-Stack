@@ -65,5 +65,5 @@ echo -e "\nExecutable Files:" >> $output
 echo $executables >> $output
 
 # A snapshot of the top 10 currently running processes
-echo -e "\nTop 10 Processes" >> $output
+echo -e "\nTop 10 Processes:" >> $output
 ps aux --sort -%mem | awk {'print $1, $2, $3, $4, $11'} | head >> $output
