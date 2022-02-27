@@ -5,8 +5,6 @@
 # Define the file that stores this script's output
 output=$HOME/research/sys_info.txt
 
-clear
-
 # Title and date this script was run
 # (I'm intentionally overwriting an existing file by using only one greater than symbol here)
 echo -e "A System Audit Script\n$(date)" > $output
