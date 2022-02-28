@@ -113,7 +113,7 @@ echo -e "\n\n${TITLE}--= SECURITY =--${NT}" >> $output
 echo -e "\n${HDR}Users Currently Logged In:${NT}\n$who" >> $output
 
 # Files with executable permissions in or underneath the /home directory
-echo -e "\n${HDR}Files with Executable Permisson(s):${NT}" >> $output
+echo -e "\n${HDR}Files with Executable Permission(s):${NT}" >> $output
 for execs in $executables
 do
   echo $execs >> $output
