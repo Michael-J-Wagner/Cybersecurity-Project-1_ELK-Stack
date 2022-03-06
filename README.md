@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![Azure Cloud Infrastructure Diagram](Diagrams/Wagner, Michael - Azure Cloud Infrastructure Diagram.png)
+![Azure Cloud Infrastructure Diagram](Diagrams/Wagner,_Michael_-_Azure_Cloud_Infrastructure_Diagram.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the **\_** file may be used to install only certain pieces of it, such as Filebeat.
 
