@@ -4,9 +4,15 @@ The files in this repository were used to configure the network depicted below.
 
 ![Azure Cloud Infrastructure Diagram](Diagrams/Wagner,_Michael_-_Azure_Cloud_Infrastructure_Diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the **\_** file may be used to install only certain pieces of it, such as Filebeat.
+These files were tested and used to build a live ELK deployment on the Azure cloud platform.
+They can be used to recreate the entire deployment pictured above,
+or select portions of the
+[playbook files]./Ansible
+may be used to install specific features, such as Metricbeat.
 
-- _TODO: Enter the playbook file._
+# end mike
+
+# NEXT
 
 This document contains the following details:
 
