@@ -7,7 +7,7 @@ The files in this repository were used to configure the network depicted below.
 These files were tested and used to build a live ELK deployment on the Azure cloud platform.
 They can be used to recreate the entire deployment pictured above,
 or select portions of the
-[playbook files]./Ansible
+[Ansible playbook files](./Ansible/)
 may be used to install specific features, such as Metricbeat.
 
 # end mike
