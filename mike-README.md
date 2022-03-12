@@ -4,10 +4,10 @@ The files in this repository were used to configure the network shown below.
 
 ![Azure Cloud Infrastructure Diagram](Diagrams/Wagner,_Michael_-_Azure_Cloud_Infrastructure_Diagram.png)
 
-These files were tested and used to build a live ELK (Elasticsearch, Logstash, and Kibana) deployment on the
-Azure cloud platform. They can be used to recreate the entire deployment pictured above, or select portions of the
-[Ansible playbook files](./Ansible/)
-can be run to install specific features, such as Metricbeat.
+These files were tested and used to build a live [ELK stack](https://www.elastic.co/what-is/elk-stack)
+(Elasticsearch, Logstash, and Kibana) deployment on the Azure cloud platform. They can be used to recreate the
+entire deployment pictured above, or select portions of the [Ansible playbook files](./Ansible/) can be run to
+install specific features, such as Metricbeat.
 
 This document contains the following details:
 
@@ -20,8 +20,8 @@ This document contains the following details:
 
 ### Description of the Topology
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA,
-the D\*mn Vulnerable Web Application.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the
+D\*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be both highly available and responsive,
 in addition to restricting access to the frontend IP addresses of the virtual network.
