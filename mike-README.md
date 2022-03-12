@@ -39,4 +39,10 @@ The configuration details of each machine may be found below.
 
 ### Access Policies
 
-The machines on the internal network are not exposed to the public Internet.
+The machines on the internal network are not exposed to the public Internet;
+they can only be accessed by the Red-Team--Jump-Box-Provisioner machine.
+
+Only the Red-Team--Jump-Box-Provisioner machine can accept connections from the Internet.
+Access to this machine is only allowed from the developer's workstation.
+
+
