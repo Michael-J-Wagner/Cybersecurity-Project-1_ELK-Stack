@@ -42,7 +42,16 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet;
 they can only be accessed by the Red-Team--Jump-Box-Provisioner machine.
 
-Only the Red-Team--Jump-Box-Provisioner machine can accept connections from the Internet.
+Only the Jump Box can accept connections from the Internet.
 Access to this machine is only allowed from the developer's workstation.
 
+The table below summarizes the access policies in place:
+
+| Name                           | Publicly Accessible | Allowed IP Addresses              |
+| ------------------------------ | ------------------- | --------------------------------- |
+| Red-Team--Jump-Box-Provisioner | Yes                 | Developer's workstation           |
+| Red-Team--Web-Server-1         | No                  | 10.0.0.4                          |
+| Red-Team--Web-Server-2         | No                  | 10.0.0.4                          |
+| Red-Team--Web-Server-3         | No                  | 10.0.0.4                          |
+| Project-ELK--Server            | No                  | 10.0.0.4, Developer's workstation |
 
