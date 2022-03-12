@@ -45,7 +45,7 @@ they can only be accessed by the Red-Team--Jump-Box-Provisioner machine.
 Only the Jump Box can accept connections from the Internet.
 Access to this machine is only allowed from the developer's workstation.
 
-The table below summarizes the access policies in place:
+The table below summarizes the access policies in place.
 
 | Name                           | Publicly Accessible | Allowed IP Addresses               |
 | ------------------------------ | ------------------- | ---------------------------------- |
@@ -72,3 +72,7 @@ The "02-config-elk-server-with-docker.yml" Ansible playbook performs the followi
 - Increases the memory size of the VMs
 - Downloads and launches the ELK container
 - Enables the Docker service to run on boot
+
+The following screenshot displays the result of running `sudo docker ps` after successfully configuring the ELK deployment.
+
+![sudo docker ps output](Images/docker_ps_output.png)
