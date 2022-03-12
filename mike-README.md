@@ -47,11 +47,12 @@ Access to this machine is only allowed from the developer's workstation.
 
 The table below summarizes the access policies in place:
 
-| Name                           | Publicly Accessible | Allowed IP Addresses              |
-| ------------------------------ | ------------------- | --------------------------------- |
-| Red-Team--Jump-Box-Provisioner | Yes                 | Developer's workstation           |
-| Red-Team--Web-Server-1         | No                  | 10.0.0.4                          |
-| Red-Team--Web-Server-2         | No                  | 10.0.0.4                          |
-| Red-Team--Web-Server-3         | No                  | 10.0.0.4                          |
-| Project-ELK--Server            | No                  | 10.0.0.4, Developer's workstation |
+| Name                           | Publicly Accessible | Allowed IP Addresses               |
+| ------------------------------ | ------------------- | ---------------------------------- |
+| Red-Team--Jump-Box-Provisioner | Yes                 | Developer's workstation            |
+| Red-Team--Web-Server-1         | No                  | 10.0.0.4                           |
+| Red-Team--Web-Server-2         | No                  | 10.0.0.4                           |
+| Red-Team--Web-Server-3         | No                  | 10.0.0.4                           |
+| Project-ELK--Server            | No                  | 10.0.0.4 & Developer's workstation |
+
 
