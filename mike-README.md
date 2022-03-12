@@ -37,3 +37,6 @@ The configuration details of each machine may be found below.
 | Red-Team--Web-Server-3         | Web Server | 10.0.0.7   | Linux: Ubuntu 18.04 |
 | Project-ELK--Server            | ELK Server | 10.1.0.4   | Linux: Ubuntu 18.04 |
 
+### Access Policies
+
+The machines on the internal network are not exposed to the public Internet.
