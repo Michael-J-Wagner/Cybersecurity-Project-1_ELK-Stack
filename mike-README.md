@@ -26,3 +26,5 @@ Load balancing ensures that the application will be both highly available and re
 in addition to restricting access to the frontend IP addresses of the virtual network.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file system and system metrics.
+
+The configuration details of each machine may be found below.
