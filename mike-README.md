@@ -87,6 +87,9 @@ This ELK server is configured to monitor the following machines:
 | Red-Team--Web-Server-3 | 10.0.0.7   |
 
 The following Beats (open source data shippers) have been installed on these machines:
+- Filebeat
+- Metricbeat
 
+These Beats allow us to collect the following information from each machine:
 - Filebeat: Monitors log files, collects events, and forwards / centralizes log data.
 - Metricbeat: Monitors servers by collecting metrics from the operating system and services running on the server.
