@@ -29,9 +29,10 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
-| Name                           | Function | IP Address | Operating System    |
-| ------------------------------ | -------- | ---------- | ------------------- |
-| Red-Team--Jump-Box-Provisioner | Gateway  | 10.0.0.4   | Linux: Ubuntu 18.04 |
-|                                |          |            |                     |
-|                                |          |            |                     |
+| Name                           | Function   | IP Address | Operating System    |
+|--------------------------------|------------|------------|---------------------|
+| Red-Team--Jump-Box-Provisioner | Gateway    | 10.0.0.4   | Linux: Ubuntu 18.04 |
+| Red-Team--Web-Server-1         | Web Server | 10.0.0.5   | Linux: Ubuntu 18.04 |
+| Red-Team--Web-Server-2         | Web Server | 10.0.0.6   | Linux: Ubuntu 18.04 |
+| Red-Team--Web-Server-3         | Web Server | 10.0.0.7   | Linux: Ubuntu 18.04 |
 
