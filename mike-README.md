@@ -64,3 +64,5 @@ Automating server configuration in this way has many advantages, such as:
 - Consistency: Simple to complex server configurations can be accurately deployed each time
 - Efficiency: Easily-run Ansible playbooks reduce the effort required to build environments and set up applications
 - Simplicity: Users can get up to speed and be productive quickly with the tool
+
+The playbook implements the following tasks:
