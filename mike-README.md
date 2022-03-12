@@ -35,5 +35,5 @@ The configuration details of each machine may be found below.
 | Red-Team--Web-Server-1         | Web Server | 10.0.0.5   | Linux: Ubuntu 18.04 |
 | Red-Team--Web-Server-2         | Web Server | 10.0.0.6   | Linux: Ubuntu 18.04 |
 | Red-Team--Web-Server-3         | Web Server | 10.0.0.7   | Linux: Ubuntu 18.04 |
-| Project-ELK--Server            | what       | 10.1.0.4   | Linux: Ubuntu 18.04 |
+| Project-ELK--Server            | ELK Server | 10.1.0.4   | Linux: Ubuntu 18.04 |
 
