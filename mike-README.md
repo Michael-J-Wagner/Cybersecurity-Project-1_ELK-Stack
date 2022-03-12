@@ -76,3 +76,8 @@ The "02-config-elk-server-with-docker.yml" Ansible playbook performs the followi
 The following screenshot displays the result of running `sudo docker ps` after successfully configuring the ELK deployment.
 
 ![sudo docker ps output](Images/docker_ps_output.png)
+
+### Target Machines & Beats
+
+This ELK server is configured to monitor the following machines:
+
