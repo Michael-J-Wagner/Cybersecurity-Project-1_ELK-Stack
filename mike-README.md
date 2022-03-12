@@ -55,4 +55,12 @@ The table below summarizes the access policies in place:
 | Red-Team--Web-Server-3         | No                  | 10.0.0.4                           |
 | Project-ELK--Server            | No                  | 10.0.0.4 & Developer's workstation |
 
+### ELK Configuration
 
+The open source IT engine Ansible was used to automate the configuration of the ELK server.
+No configuration was performed manually.
+Automating server configuration in this way has many advantages, such as:
+
+- Consistency: Human error
+- Efficiency: Complex server configurations
+- Simplicity: Ansible is easy to set up and use
