@@ -61,6 +61,6 @@ The open source IT engine Ansible was used to automate the configuration of the 
 No configuration was performed manually.
 Automating server configuration in this way has many advantages, such as:
 
-- Consistency: Human error
-- Efficiency: Complex server configurations | reproduction of environments and applications
+- Consistency: Simple-to-complex server configurations are consistently deployed each time
+- Efficiency: Easily-run Ansible playbooks reduce the effort required to build environments and set up applications
 - Simplicity: Users can get up to speed and be productive quickly with the tool
