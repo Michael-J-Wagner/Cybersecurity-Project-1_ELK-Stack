@@ -62,5 +62,5 @@ No configuration was performed manually.
 Automating server configuration in this way has many advantages, such as:
 
 - Consistency: Human error
-- Efficiency: Complex server configurations
-- Simplicity: Ansible is easy to set up and use
+- Efficiency: Complex server configurations | reproduction of environments and applications
+- Simplicity: Users can get up to speed and be productive quickly with the tool
