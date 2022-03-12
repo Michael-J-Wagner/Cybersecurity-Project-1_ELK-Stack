@@ -28,3 +28,10 @@ in addition to restricting access to the frontend IP addresses of the virtual ne
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file system and system metrics.
 
 The configuration details of each machine may be found below.
+
+| Name                           | Function | IP Address | Operating System    |
+| ------------------------------ | -------- | ---------- | ------------------- |
+| Red-Team--Jump-Box-Provisioner | Gateway  | 10.0.0.4   | Linux: Ubuntu 18.04 |
+|                                |          |            |                     |
+|                                |          |            |                     |
+
