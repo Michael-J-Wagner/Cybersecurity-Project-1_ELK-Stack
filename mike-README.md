@@ -4,14 +4,9 @@ The files in this repository were used to configure the network shown below.
 
 ![Azure Cloud Infrastructure Diagram](Diagrams/Wagner,_Michael_-_Azure_Cloud_Infrastructure_Diagram.png)
 
-These files were tested and used to build a live ELK deployment on the Azure cloud platform.
-They can be used to recreate the entire deployment pictured above, or select portions of the
-[Ansible playbook files](./Ansible/)
-can be run to install specific features, such as Metricbeat.
-
-# end mike
-
-# NEXT
+These files were tested and used to build a live ELK stack (Elasticsearch, Logstash, and Kibana) deployment on
+the Azure cloud platform. They can be used to recreate the entire deployment pictured above, or select portions of
+the [Ansible playbook files](./Ansible/) can be run to install specific features, such as Metricbeat.
 
 This document contains the following details:
 
@@ -24,91 +19,56 @@ This document contains the following details:
 
 ### Description of the Topology
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D\*mn Vulnerable Web Application.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the
+D\*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly **\_**, in addition to restricting **\_** to the network.
+Load balancing ensures that the application will be both highly available and responsive,
+in addition to restricting access to the frontend IP addresses of the virtual network.
 
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
-
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **\_** and system **\_**.
-
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file system and system metrics.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-| -------- | -------- | ---------- | ---------------- |
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name                           | Function   | IP Address | Operating System    |
+|--------------------------------|------------|------------|---------------------|
+| Red-Team--Jump-Box-Provisioner | Gateway    | 10.0.0.4   | Linux: Ubuntu 18.04 |
+| Red-Team--Web-Server-1         | Web Server | 10.0.0.5   | Linux: Ubuntu 18.04 |
+| Red-Team--Web-Server-2         | Web Server | 10.0.0.6   | Linux: Ubuntu 18.04 |
+| Red-Team--Web-Server-3         | Web Server | 10.0.0.7   | Linux: Ubuntu 18.04 |
+| Project-ELK--Server            | ELK Server | 10.1.0.4   | Linux: Ubuntu 18.04 |
 
 ### Access Policies
 
-The machines on the internal network are not exposed to the public Internet.
+The machines on the internal network are not exposed to the public Internet;
+they can only be accessed by the Red-Team--Jump-Box-Provisioner machine.
 
-Only the **\_** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the Jump Box can accept connections from the Internet.
+Access to this machine is only allowed from the developer's workstation.
 
-- _TODO: Add whitelisted IP addresses_
+The table below summarizes the access policies in place:
 
-Machines within the network can only be accessed by **\_**.
+| Name                           | Publicly Accessible | Allowed IP Addresses               |
+| ------------------------------ | ------------------- | ---------------------------------- |
+| Red-Team--Jump-Box-Provisioner | Yes                 | Developer's workstation            |
+| Red-Team--Web-Server-1         | No                  | 10.0.0.4                           |
+| Red-Team--Web-Server-2         | No                  | 10.0.0.4                           |
+| Red-Team--Web-Server-3         | No                  | 10.0.0.4                           |
+| Project-ELK--Server            | No                  | 10.0.0.4 & Developer's workstation |
 
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+### ELK Configuration
 
-A summary of the access policies in place can be found in the table below.
+The open source IT engine Ansible was used to automate the configuration of the ELK server.
+No configuration was performed manually.
+Automating server configuration in this way has many advantages, such as:
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-| -------- | ------------------- | -------------------- |
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+- Consistency: Simple to complex server configurations can be accurately deployed each time
+- Efficiency: Easily-run Ansible playbooks reduce the effort required to build environments and set up applications
+- Simplicity: Users can get up to speed and be productive quickly with the tool
 
-### Elk Configuration
+The "02-config-elk-server-with-docker.yml" Ansible playbook performs the following tasks:
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-
-- _TODO: What is the main advantage of automating configuration with Ansible?_
-
-The playbook implements the following tasks:
-
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
-
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
-
-### Target Machines & Beats
-
-This ELK server is configured to monitor the following machines:
-
-- _TODO: List the IP addresses of the machines you are monitoring_
-
-We have installed the following Beats on these machines:
-
-- _TODO: Specify which Beats you successfully installed_
-
-These Beats allow us to collect the following information from each machine:
-
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
-
-### Using the Playbook
-
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
-
-SSH into the control node and follow the steps below:
-
-- Copy the **\_** file to **\_**.
-- Update the **\_** file to include...
-- Run the playbook, and navigate to \_\_\_\_ to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- \_Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- Installs Docker
+- Installs the pip package management system
+- Increases the memory size of the VMs
+- Downloads and launches the ELK container
+- Enables the Docker service to run on boot
