@@ -10,10 +10,9 @@ This document contains the following details:
 
 - Description of the Topology
 - Access Policies
-- ELK Configuration
-  - Beats in Use
-  - Machines Being Monitored
-- How to Use the Ansible Build
+- ELK Server Configuration
+- Target Machines & Beats
+- Using the Playbooks
 
 ---
 
@@ -39,7 +38,7 @@ The configuration details of each machine are found below.
 
 ### Access Policies
 
-The machines on the internal network are not exposed to the public Internet. They are exclusively accessible through the Jump Box Provisioner, a VM that has been configured to only accept connections from the developer's workstation.
+The machines on the internal network are not exposed to the public Internet. They are only accessible through the Jump Box Provisioner, a VM that has been configured to accept connections exclusively from the developer's workstation.
 
 The table below summarizes the access policies in place.
 
@@ -53,7 +52,7 @@ The table below summarizes the access policies in place.
 
 ---
 
-### ELK Configuration
+### ELK Server Configuration
 
 The open source IT engine Ansible was used to automate the configuration of the ELK server. No configuration was performed manually. Automating server configuration in this way has many advantages, such as:
 
@@ -66,7 +65,7 @@ The [ELK server playbook](./Ansible/02-config-elk-server-with-docker.yml) perfor
 - Installs Docker
 - Installs the pip package management system
 - Increases the memory size of the VMs
-- Downloads and launches the ELK container
+- Downloads and launches the ELK server container
 - Enables the Docker service to run on boot
 
 The following screenshot displays the result of running `sudo docker ps` after successfully configuring the ELK deployment.
