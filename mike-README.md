@@ -27,7 +27,7 @@ in addition to restricting access to the frontend IP addresses of the virtual ne
 
 Integrating an ELK server allows users to easily monitor vulnerable virtual machines for changes to the file system and to analyze system metrics.
 
-The configuration details of each machine may be found below.
+The configuration details of each machine are found below.
 
 | Name                           | Function   | IP Address | Operating System    |
 |--------------------------------|------------|------------|---------------------|
