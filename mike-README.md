@@ -101,7 +101,7 @@ The data collected by these two Beats is used to build and share dashboards in K
 In order to use the playbooks you will need to have configured an Ansible control node. Assuming a control node has
 been provisioned, SSH into the control node and follow the steps below:
 
-1. Copy the \*.yml playbook files you want to run to `/etc/ansible`.
+1. Copy the \*.yml playbook files you want to run to your `/etc/ansible` directory.
 2. Update the Ansible hosts file `/etc/ansible/hosts` to include the following:
 
 ```
