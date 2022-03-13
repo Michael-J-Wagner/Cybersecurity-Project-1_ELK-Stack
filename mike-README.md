@@ -4,10 +4,11 @@
 
 ---
 
+> **Environment Set Up**
 1. Copy the playbook files that you wish to run from [this GitHub repository](./Ansible/) to your provisioner VM's `/etc/ansible` directory.
 
 
-2. In your provisioner VM, add the IP addresses of your ELK server and the Web servers to be monitored to Ansible's hosts file at `/etc/ansible/hosts`:
+2. In your provisioner VM, add the IP addresses of your ELK server and the Web servers you want to monitor to Ansible's hosts file at `/etc/ansible/hosts`:
 
 ```
 [elkserver]
@@ -19,19 +20,24 @@
 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 ```
 
-3. Open a Terminal window and run the ELK playbook: `ansible-playbook /etc/ansible/elk-playbook.yml`
 
-4. After the playbook finishes, SSH to your virtual machine and check that the ELK Docker container is running by entering `sudo docker ps`. Under the second column titled "IMAGE" you should see `sebp/elk`:
+> **Install ELK Server**
+3. Open a Terminal window and run the ELK playbook with the command: `ansible-playbook /etc/ansible/elk-playbook.yml`
+
+4. After the playbook finishes, SSH to your ELK VM. Check that the ELK Docker container is running by entering `sudo docker ps`. Under the second column titled "IMAGE" you should see `sebp/elk`:
 
 ```
 CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                                                                    NAMES
 2560bee5a175   sebp/elk:761   "/usr/local/bin/star…"   2 minutes ago   Up 2 minutes   0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp   elk
 ```
 
+
+> **Install Filebeat**
 5. In Terminal, run the filebeat playbook: `ansible-playbook /etc/ansible/filebeat-playbook.yml`
 
 6. Navigate to ____ to check that the installation worked as expected.
 
+> **Install Metricbeat**
 7. In Terminal, run the metricbeat playbook: `ansible-playbook /etc/ansible/metricbeat-playbook.yml`
 
 8. Navigate to ____ to check that the installation worked as expected.
