@@ -21,7 +21,16 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 
 ---
 
-1. In your provisioner VM, use Terminal and navigate to `/etc/ansible/files/`. Copy the playbook files from this GitHub repository that you wish to run
+1. In your provisioner VM, use Terminal and navigate to `/etc/ansible/files/`. Copy the playbook files from this GitHub repository that you wish to run:
+
+Elk Server
+`curl https://github.com/Michael-J-Wagner/Cybersecurity-Project-1_ELK-Stack/blob/main/Ansible/02-config-elk-server-with-docker.yml > /etc/ansible/files/elk-config.yml`
+
+Filebeat
+`curl https://github.com/Michael-J-Wagner/Cybersecurity-Project-1_ELK-Stack/blob/main/Ansible/03-filebeat-playbook.yml > /etc/ansible/files/filebeat-config.yml`
+
+Metricbeat
+`curl https://github.com/Michael-J-Wagner/Cybersecurity-Project-1_ELK-Stack/blob/main/Ansible/04-metricbeat-playbook.yml > /etc/ansible/files/metricbeat-config.yml`
 
 2. In your provisioner VM, add the IP addresses of your ELK server and the Web servers to be monitored to Ansible's hosts file at `/etc/ansible/hosts`:
 
