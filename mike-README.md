@@ -94,7 +94,7 @@ These Beats allow us to collect the following information from each machine:
 - Metricbeat: Monitors servers by collecting metrics from the operating system and every process running on the system
 
 The data collected by these two Beats is used to build and share dashboards in Kibana that visualize system-level CPU usage,
-memory, file system, disk IO, network IO statistics,  common log formats, and more.
+memory, file system, disk IO, network IO statistics, and more.
 
 ### Using the Playbooks
 
