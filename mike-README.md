@@ -40,11 +40,9 @@ The configuration details of each machine are found below.
 
 ### Access Policies
 
-The machines on the internal network are not exposed to the public Internet;
-they can only be accessed by the Red-Team--Jump-Box-Provisioner machine.
-
-Only the Jump Box can accept connections from the Internet.
-Access to this machine is only allowed from the developer's workstation.
+The machines on the internal network are not exposed to the public Internet.
+They can only be accessed by the Jump Box machine, which is the only VM that can accept connections from the Internet.
+Access to this machine is allowed only from the developer's workstation.
 
 The table below summarizes the access policies in place.
 
@@ -64,7 +62,7 @@ Automating server configuration in this way has many advantages, such as:
 
 - Consistency: Server configurations from simple to complex can be precisely deployed every time
 - Efficiency: Easily-run Ansible playbooks reduce the effort required to create multiple environments and set up / update their applications
-- Simplicity: Users can get up to speed and be productive quickly
+- Simplicity: Users can get up to speed and be productive quickly, eliminating repetitive tasks that take time and can cause errors
 
 The [ELK server Ansible playbook](./Ansible/02-config-elk-server-with-docker.yml) performs the following tasks:
 
