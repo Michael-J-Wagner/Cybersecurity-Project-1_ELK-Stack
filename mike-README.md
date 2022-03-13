@@ -30,7 +30,7 @@ Integrating an ELK server allows users to easily monitor vulnerable virtual mach
 The configuration details of each machine are found below.
 
 | Name                           | Function   | IP Address | Operating System    |
-|--------------------------------|------------|------------|---------------------|
+|:-------------------------------|:-----------|:-----------|:--------------------|
 | Red-Team--Jump-Box-Provisioner | Gateway    | 10.0.0.4   | Linux: Ubuntu 18.04 |
 | Red-Team--Web-Server-1         | Web Server | 10.0.0.5   | Linux: Ubuntu 18.04 |
 | Red-Team--Web-Server-2         | Web Server | 10.0.0.6   | Linux: Ubuntu 18.04 |
@@ -48,7 +48,7 @@ Access to this machine is only allowed from the developer's workstation.
 The table below summarizes the access policies in place.
 
 | Name                           | Publicly Accessible | Allowed IP Addresses               |
-| ------------------------------ | ------------------- | ---------------------------------- |
+| :----------------------------- | :------------------ | :--------------------------------- |
 | Red-Team--Jump-Box-Provisioner | Yes                 | Developer's workstation            |
 | Red-Team--Web-Server-1         | No                  | 10.0.0.4                           |
 | Red-Team--Web-Server-2         | No                  | 10.0.0.4                           |
@@ -81,7 +81,7 @@ The following screenshot displays the result of running `sudo docker ps` after s
 
 This ELK server is configured to monitor the following machines:
 | Name                   | IP Address |
-| ---------------------- | ---------- |
+| :--------------------- | :--------- |
 | Red-Team--Web-Server-1 | 10.0.0.5   |
 | Red-Team--Web-Server-2 | 10.0.0.6   |
 | Red-Team--Web-Server-3 | 10.0.0.7   |
