@@ -129,11 +129,20 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS   
 #### Install Filebeat
 1. In Terminal, run the Filebeat playbook: `ansible-playbook /etc/ansible/filebeat-playbook.yml`
 
-2. From your Kibana home page at `http://[your.VM.IP]:5601/app/kibana`, navigate to Add Logs > System Logs > Deb. Scroll down to the "Module status" section and click the "Check Data" button. If successful, you should see a "Data successfully received from this module" message:
+2. From your Kibana home page at `http://[your.VM.IP]:5601/app/kibana`:
+    - Navigate to Add Logs > System Logs > Deb
+    - Scroll down to the "Module status" section
+    - Click the "Check Data" button.
+
+    If successful, you should see a "Data successfully received from this module" message:
 
 ![Filebeat data received](./Images/filebeat-data-received.png)
 
 #### Install Metricbeat
 1. Run the Metricbeat playbook: `ansible-playbook /etc/ansible/metricbeat-playbook.yml`
 
-2. From your Kibana home page, navigate to Add Metric Data > Docker Metrics > Deb. Scroll down to the "Module status" section and click the "Check Data" button. If successful, you should see a "Data successfully received from this module" message like the Filebeat screenshot above.
+2. From your Kibana home page:
+    - Navigate to Add Metric Data > Docker Metrics > Deb
+    - Scroll down to the "Module status" section and click the "Check Data" button.
+
+    If successful, you should see a "Data successfully received from this module" message like the Filebeat screenshot above.
