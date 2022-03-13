@@ -1,19 +1,10 @@
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-
-- Run the playbook to launch the container.
-- Create an Ansible playbook that copies this configuration file to the DVWA VMs and then installs Filebeat.
 - Run the playbook to install Filebeat.
 - Confirm that the ELK Stack is receiving logs.
 - Use the same method to install Metricbeat.
 
 ---
 
-1. Copy the playbook files that you wish to run from [this GitHub repository](./Ansible/) to your provisioner VM's `/etc/ansible/files` directory.
+1. Copy the playbook files that you wish to run from [this GitHub repository](./Ansible/) to your provisioner VM's `/etc/ansible` directory.
 
 
 2. In your provisioner VM, add the IP addresses of your ELK server and the Web servers to be monitored to Ansible's hosts file at `/etc/ansible/hosts`:
