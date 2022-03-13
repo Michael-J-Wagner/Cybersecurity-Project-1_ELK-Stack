@@ -4,7 +4,7 @@ The files in this repository were used to configure the network shown below.
 
 ![Azure Cloud Infrastructure Diagram](Diagrams/Wagner,_Michael_-_Azure_Cloud_Infrastructure_Diagram.png)
 
-These files were tested and used to build a live ELK stack (Elasticsearch, Logstash, and Kibana) deployment on the Azure cloud platform. They can be used to recreate the entire deployment pictured above, or select portions of the [Ansible playbook files](./Ansible/) can be run to install specific features, such as Metricbeat.
+These files were tested and used to build a live ELK stack (Elasticsearch, Logstash, and Kibana) deployment on the Azure cloud platform. They can be used to recreate the entire deployment pictured above, or select portions of the [Ansible playbook files](./Ansible/) can be run to install specific features such as Metricbeat.
 
 This document contains the following details:
 
@@ -56,11 +56,11 @@ The table below summarizes the access policies in place.
 
 The open source IT engine Ansible was used to automate the configuration of the ELK server. No configuration was performed manually. Automating server configuration in this way has many advantages, such as:
 
-- Consistency: Server configurations from simple to complex can be precisely deployed every time
+- Consistency: Server configurations from simple to complex can be deployed precisely every time
 - Efficiency: Easily-run Ansible playbooks reduce the effort required to create multiple environments and set up / update their applications
 - Simplicity: Users can get up to speed and be productive quickly, eliminating repetitive tasks that take time and can cause errors
 
-The [ELK server playbook](./Ansible/02-config-elk-server-with-docker.yml) performs the following tasks:
+<br>The [ELK server playbook](./Ansible/02-config-elk-server-with-docker.yml) performs the following tasks:
 
 - Installs Docker
 - Installs the pip package management system
@@ -68,7 +68,7 @@ The [ELK server playbook](./Ansible/02-config-elk-server-with-docker.yml) perfor
 - Downloads and launches the ELK server container
 - Enables the Docker service to run on boot
 
-The following screenshot displays the result of running `sudo docker ps` after successfully configuring the ELK deployment.
+The result of running `sudo docker ps` after successfully configuring the ELK deployment is shown below.
 
 ![sudo docker ps output](./Images/docker_ps_output.png)
 
@@ -132,7 +132,7 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS   
 2. From your Kibana home page at `http://[your.VM.IP]:5601/app/kibana`:
     - Navigate to Add Logs > System Logs > Deb
     - Scroll down to the "Module status" section
-    - Click the "Check Data" button.
+    - Click the "Check Data" button
 
     If successful, you should see a "Data successfully received from this module" message:
 
@@ -143,6 +143,6 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS   
 
 2. From your Kibana home page:
     - Navigate to Add Metric Data > Docker Metrics > Deb
-    - Scroll down to the "Module status" section and click the "Check Data" button.
+    - Scroll down to the "Module status" section and click the "Check Data" button
 
     If successful, you should see a "Data successfully received from this module" message like the Filebeat screenshot above.
