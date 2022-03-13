@@ -99,7 +99,7 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbooks you will need to have configured an Ansible control node. Assuming a control node has
 been provisioned, SSH into the control node and follow the steps below:
 
-1. Copy the playbook \*.yml files to `/etc/ansible`.
+1. Copy the \*.yml playbook files you want to run to `/etc/ansible`.
 2. Update the Ansible hosts file `/etc/ansible/hosts` to include the following:
 
 ```
