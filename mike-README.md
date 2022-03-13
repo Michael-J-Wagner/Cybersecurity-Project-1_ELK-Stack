@@ -4,7 +4,7 @@
 
 ---
 
-> **Environment Set Up**
+#### Environment Set Up
 1. Copy the playbook files that you wish to run from [this GitHub repository](./Ansible/) to your provisioner VM's `/etc/ansible` directory.
 
 
@@ -19,28 +19,35 @@
 10.0.0.6 ansible_python_interpreter=/usr/bin/python3
 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 ```
+  
+#### To Install the ELK Server
+1. Open a Terminal window and run the ELK playbook with the command: `ansible-playbook /etc/ansible/elk-playbook.yml`
 
-
-> **Install ELK Server**
-3. Open a Terminal window and run the ELK playbook with the command: `ansible-playbook /etc/ansible/elk-playbook.yml`
-
-4. After the playbook finishes, SSH to your ELK VM. Check that the ELK Docker container is running by entering `sudo docker ps`. Under the second column titled "IMAGE" you should see `sebp/elk`:
+2. After the playbook finishes, SSH to your ELK VM. Check that the ELK Docker container is running by entering `sudo docker ps`. Under the second column titled "IMAGE" you should see `sebp/elk`:
 
 ```
 CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                                                                    NAMES
 2560bee5a175   sebp/elk:761   "/usr/local/bin/star…"   2 minutes ago   Up 2 minutes   0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp   elk
 ```
+3. Test that you can access the Kibana user interface at `http://[your.VM.IP]:5601/app/kibana`.
+<br></br>
+#### To Install Filebeat
+1. In Terminal, run the Filebeat playbook: `ansible-playbook /etc/ansible/filebeat-playbook.yml`
+
+2. From your Kibana home page at `http://[your.VM.IP]:5601/app/kibana`, navigate to Add Logs > System Logs > Deb. Scroll down to the "Module status" section and click the "Check Data" button. If successful, you should see a "Data successfully received from this module" message:
+
+![Filebeat data received](./Images/filebeat-data-received.png)
 
 
-> **Install Filebeat**
-5. In Terminal, run the filebeat playbook: `ansible-playbook /etc/ansible/filebeat-playbook.yml`
 
-6. Navigate to ____ to check that the installation worked as expected.
 
-> **Install Metricbeat**
-7. In Terminal, run the metricbeat playbook: `ansible-playbook /etc/ansible/metricbeat-playbook.yml`
 
-8. Navigate to ____ to check that the installation worked as expected.
+<br></br> 
+#### To Install Metricbeat
+1. Run the Metricbeat playbook: `ansible-playbook /etc/ansible/metricbeat-playbook.yml`
+
+
+similar to the screenshot above for Filebeat.
 
 ---
 
@@ -126,7 +133,7 @@ The [ELK server playbook](./Ansible/02-config-elk-server-with-docker.yml) perfor
 
 The following screenshot displays the result of running `sudo docker ps` after successfully configuring the ELK deployment.
 
-![sudo docker ps output](Images/docker_ps_output.png)
+![sudo docker ps output](./Images/docker_ps_output.png)
 
 ---
 
