@@ -1,3 +1,31 @@
+
+_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
+- Create an Ansible playbook that installs Docker and configures an ELK container.
+- Run the playbook to launch the container.
+- Navigate to the ELK server’s GUI to view Filebeat installation instructions.
+- Create a Filebeat configuration file.
+- Create an Ansible playbook that copies this configuration file to the DVWA VMs and then installs Filebeat.
+- Run the playbook to install Filebeat.
+- Confirm that the ELK Stack is receiving logs.
+- Use the same method to install Metricbeat.
+
+---
+
+1. In your provisioner VM, add the IP addresses of your ELK server and the Web servers to be monitored to Ansible's hosts file at `/etc/ansible/hosts`:
+
+```
+[elkserver]
+10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+
+[webservers]
+10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+```
+
+---
+
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network shown below.
@@ -16,6 +44,8 @@ This document contains the following details:
   - Beats in Use
   - Machines Being Monitored
 - How to Use the Ansible Build
+
+---
 
 ### Description of the Topology
 
@@ -38,6 +68,8 @@ The configuration details of each machine are found below.
 | Red-Team--Web-Server-3         | Web Server | 10.0.0.7   | Linux: Ubuntu 18.04 |
 | Project-ELK--Server            | ELK Server | 10.1.0.4   | Linux: Ubuntu 18.04 |
 
+---
+
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet.
@@ -53,6 +85,8 @@ The table below summarizes the access policies in place.
 | Red-Team--Web-Server-2         | No                  | 10.0.0.4                           |
 | Red-Team--Web-Server-3         | No                  | 10.0.0.4                           |
 | Project-ELK--Server            | No                  | 10.0.0.4 & Developer's workstation |
+
+---
 
 ### ELK Configuration
 
@@ -76,6 +110,8 @@ The following screenshot displays the result of running `sudo docker ps` after s
 
 ![sudo docker ps output](Images/docker_ps_output.png)
 
+---
+
 ### Target Machines & Beats
 
 The ELK server is configured to monitor the following machines:
@@ -96,30 +132,9 @@ These Beats allow us to collect the following information from each machine:
 The data collected by these two Beats is used to build and share dashboards in Kibana that visualize system-level CPU usage,
 memory, file system, disk IO, network IO statistics, and more.
 
+---
+
 ### Using the Playbooks
 
 In order to use the playbooks you will need to have configured an Ansible control node. Assuming a control node has
 been provisioned, SSH into the control node and follow the steps below:
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-
-- Add the new VM to Ansible’s hosts file in your provisioner VM.
-- Create an Ansible playbook that installs Docker and configures an ELK container.
-- Run the playbook to launch the container.
-- Navigate to the ELK server’s GUI to view Filebeat installation instructions.
-- Create a Filebeat configuration file.
-- Create an Ansible playbook that copies this configuration file to the DVWA VMs and then installs Filebeat.
-- Run the playbook to install Filebeat.
-- Confirm that the ELK Stack is receiving logs.
-- Use the same method to install Metricbeat.
-
-
-```
-[webservers]
-10.0.0.5 ansible_python_interpreter=/usr/bin/python3
-10.0.0.6 ansible_python_interpreter=/usr/bin/python3
-10.0.0.7 ansible_python_interpreter=/usr/bin/python3
-
-[elkserver]
-10.1.0.4 ansible_python_interpreter=/usr/bin/python3
-```
