@@ -78,7 +78,7 @@ The following screenshot displays the result of running `sudo docker ps` after s
 
 ### Target Machines & Beats
 
-This ELK server is configured to monitor the following machines:
+The ELK server is configured to monitor the following machines:
 | Name                   | IP Address |
 | :--------------------- | :--------- |
 | Red-Team--Web-Server-1 | 10.0.0.5   |
