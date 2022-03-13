@@ -101,8 +101,18 @@ memory, file system, disk IO, network IO statistics, and more.
 In order to use the playbooks you will need to have configured an Ansible control node. Assuming a control node has
 been provisioned, SSH into the control node and follow the steps below:
 
-1. Copy the \*.yml playbook files you want to run to your `/etc/ansible` directory.
-2. Update the Ansible hosts file `/etc/ansible/hosts` to include the following:
+_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
+- Add the new VM to Ansible’s hosts file in your provisioner VM.
+- Create an Ansible playbook that installs Docker and configures an ELK container.
+- Run the playbook to launch the container.
+- Navigate to the ELK server’s GUI to view Filebeat installation instructions.
+- Create a Filebeat configuration file.
+- Create an Ansible playbook that copies this configuration file to the DVWA VMs and then installs Filebeat.
+- Run the playbook to install Filebeat.
+- Confirm that the ELK Stack is receiving logs.
+- Use the same method to install Metricbeat.
+
 
 ```
 [webservers]
