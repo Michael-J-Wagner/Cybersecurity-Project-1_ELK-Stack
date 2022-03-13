@@ -64,7 +64,7 @@ Automating server configuration in this way has many advantages, such as:
 - Efficiency: Easily-run Ansible playbooks reduce the effort required to create multiple environments and set up / update their applications
 - Simplicity: Users can get up to speed and be productive quickly, eliminating repetitive tasks that take time and can cause errors
 
-The [ELK server Ansible playbook](./Ansible/02-config-elk-server-with-docker.yml) performs the following tasks:
+The [ELK server playbook](./Ansible/02-config-elk-server-with-docker.yml) performs the following tasks:
 
 - Installs Docker
 - Installs the pip package management system
