@@ -94,6 +94,8 @@ These Beats allow us to collect the following information from each machine:
 - Filebeat: Monitors log files, collects events, and forwards / centralizes log data.
 - Metricbeat: Monitors servers by collecting metrics from the operating system and every process running on the system.
 
+The data collected by these two Beats is used to build and share dashboards in Kibana that show system-level CPU usage, memory, file system, disk I/O, network I/O statistics, and more.
+
 ### Using the Playbooks
 
 In order to use the playbooks you will need to have configured an Ansible control node. Assuming a control node has
