@@ -1,8 +1,3 @@
-
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
-
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
@@ -10,10 +5,7 @@ _TODO: Answer the following questions to fill in the blanks:_
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
-- Create an Ansible playbook that installs Docker and configures an ELK container.
 - Run the playbook to launch the container.
-- Navigate to the ELK server’s GUI to view Filebeat installation instructions.
-- Create a Filebeat configuration file.
 - Create an Ansible playbook that copies this configuration file to the DVWA VMs and then installs Filebeat.
 - Run the playbook to install Filebeat.
 - Confirm that the ELK Stack is receiving logs.
@@ -21,22 +13,8 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 
 ---
 
-1. In your provisioner VM, open a Terminal window and copy the playbook files from this GitHub repository that you wish to run using `curl`.
+1. Copy the playbook files that you wish to run from [this GitHub repository](./Ansible/) to your provisioner VM's `/etc/ansible/files` directory.
 
-- Elk Server playbook:
-```
-curl https://github.com/Michael-J-Wagner/Cybersecurity-Project-1_ELK-Stack/blob/main/Ansible/02-config-elk-server-with-docker.yml > /etc/ansible/files/elk-config.yml
-```
-
-- Filebeat playbook:
-```
-curl https://github.com/Michael-J-Wagner/Cybersecurity-Project-1_ELK-Stack/blob/main/Ansible/03-filebeat-playbook.yml > /etc/ansible/files/filebeat-config.yml
-```
-
-- Metricbeat playbook:
-```
-curl https://github.com/Michael-J-Wagner/Cybersecurity-Project-1_ELK-Stack/blob/main/Ansible/04-metricbeat-playbook.yml > /etc/ansible/files/metricbeat-config.yml
-```
 
 2. In your provisioner VM, add the IP addresses of your ELK server and the Web servers to be monitored to Ansible's hosts file at `/etc/ansible/hosts`:
 
@@ -49,6 +27,23 @@ curl https://github.com/Michael-J-Wagner/Cybersecurity-Project-1_ELK-Stack/blob/
 10.0.0.6 ansible_python_interpreter=/usr/bin/python3
 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 ```
+
+3. Open a Terminal window and run the ELK playbook: `ansible-playbook /etc/ansible/elk-playbook.yml`
+
+4. After the playbook finishes, SSH to your virtual machine and check that the ELK Docker container is running by entering `sudo docker ps`. Under the second column titled "IMAGE" you should see `sebp/elk`:
+
+```
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                                                                    NAMES
+2560bee5a175   sebp/elk:761   "/usr/local/bin/star…"   2 minutes ago   Up 2 minutes   0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp   elk
+```
+
+5. In Terminal, run the filebeat playbook: `ansible-playbook /etc/ansible/filebeat-playbook.yml`
+
+6. Navigate to ____ to check that the installation worked as expected.
+
+7. In Terminal, run the metricbeat playbook: `ansible-playbook /etc/ansible/metricbeat-playbook.yml`
+
+8. Navigate to ____ to check that the installation worked as expected.
 
 ---
 
