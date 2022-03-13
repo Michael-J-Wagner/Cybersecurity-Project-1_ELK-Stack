@@ -44,9 +44,8 @@ The configuration details of each machine are found below.
 
 ### Access Policies
 
-The machines on the internal network are not exposed to the public Internet.
-They can only be accessed by the Jump Box machine, which is the only VM that can accept connections from the Internet.
-Access to this machine is allowed only from the developer's workstation.
+The machines on the internal network are not exposed to the public Internet. They are accessible through the
+Jump Box, a VM that has been configured to only accept connections from the developer's workstation.
 
 The table below summarizes the access policies in place.
 
@@ -144,8 +143,8 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS   
 2. From your Kibana home page at `http://[your.VM.IP]:5601/app/kibana`, navigate to Add Logs > System Logs > Deb. Scroll down to the "Module status" section and click the "Check Data" button. If successful, you should see a "Data successfully received from this module" message:
 
 ![Filebeat data received](./Images/filebeat-data-received.png)
-<br></br> 
+
 #### Install Metricbeat
 1. Run the Metricbeat playbook: `ansible-playbook /etc/ansible/metricbeat-playbook.yml`
 
-2. From your Kibana home page at `http://[your.VM.IP]:5601/app/kibana`, navigate to Add Metric Data > Docker Metrics > Deb. Scroll down to the "Module status" section and click the "Check Data" button. If successful, you should see a "Data successfully received from this module" message similar to the Filebeat screenshot above.
+2. From your Kibana home page, navigate to Add Metric Data > Docker Metrics > Deb. Scroll down to the "Module status" section and click the "Check Data" button. If successful, you should see a "Data successfully received from this module" message like the Filebeat screenshot above.
