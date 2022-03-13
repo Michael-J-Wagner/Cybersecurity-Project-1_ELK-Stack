@@ -1,56 +1,3 @@
-- Run the playbook to install Filebeat.
-- Confirm that the ELK Stack is receiving logs.
-- Use the same method to install Metricbeat.
-
----
-
-#### Environment Set Up
-1. Copy the playbook files that you wish to run from [this GitHub repository](./Ansible/) to your provisioner VM's `/etc/ansible` directory.
-
-
-2. In your provisioner VM, add the IP addresses of your ELK server and the Web servers you want to monitor to Ansible's hosts file at `/etc/ansible/hosts`:
-
-```
-[elkserver]
-10.1.0.4 ansible_python_interpreter=/usr/bin/python3
-
-[webservers]
-10.0.0.5 ansible_python_interpreter=/usr/bin/python3
-10.0.0.6 ansible_python_interpreter=/usr/bin/python3
-10.0.0.7 ansible_python_interpreter=/usr/bin/python3
-```
-  
-#### To Install the ELK Server
-1. Open a Terminal window and run the ELK playbook with the command: `ansible-playbook /etc/ansible/elk-playbook.yml`
-
-2. After the playbook finishes, SSH to your ELK VM. Check that the ELK Docker container is running by entering `sudo docker ps`. Under the second column titled "IMAGE" you should see `sebp/elk`:
-
-```
-CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                                                                    NAMES
-2560bee5a175   sebp/elk:761   "/usr/local/bin/star…"   2 minutes ago   Up 2 minutes   0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp   elk
-```
-3. Test that you can access the Kibana user interface at `http://[your.VM.IP]:5601/app/kibana`.
-<br></br>
-#### To Install Filebeat
-1. In Terminal, run the Filebeat playbook: `ansible-playbook /etc/ansible/filebeat-playbook.yml`
-
-2. From your Kibana home page at `http://[your.VM.IP]:5601/app/kibana`, navigate to Add Logs > System Logs > Deb. Scroll down to the "Module status" section and click the "Check Data" button. If successful, you should see a "Data successfully received from this module" message:
-
-![Filebeat data received](./Images/filebeat-data-received.png)
-
-
-
-
-
-<br></br> 
-#### To Install Metricbeat
-1. Run the Metricbeat playbook: `ansible-playbook /etc/ansible/metricbeat-playbook.yml`
-
-
-similar to the screenshot above for Filebeat.
-
----
-
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network shown below.
@@ -163,3 +110,42 @@ memory, file system, disk IO, network IO statistics, and more.
 
 In order to use the playbooks you will need to have configured an Ansible control node. Assuming a control node has
 been provisioned, SSH into the control node and follow the steps below:
+
+#### Environment Set Up
+1. Copy the playbook files that you wish to run from [this GitHub repository](./Ansible/) to your provisioner VM's `/etc/ansible` directory.
+
+
+2. In your provisioner VM, add the IP addresses of your ELK server and the Web servers you want to monitor to Ansible's hosts file at `/etc/ansible/hosts`:
+
+```
+[elkserver]
+10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+
+[webservers]
+10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+```
+  
+#### Install the ELK Server
+1. Open a Terminal window and run the ELK playbook with the command: `ansible-playbook /etc/ansible/elk-playbook.yml`
+
+2. After the playbook finishes, SSH to your ELK VM. Check that the ELK Docker container is running by entering `sudo docker ps`. Under the second column titled "IMAGE" you should see `sebp/elk`:
+
+```
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                                                                    NAMES
+2560bee5a175   sebp/elk:761   "/usr/local/bin/star…"   2 minutes ago   Up 2 minutes   0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp   elk
+```
+3. Test that you can access the Kibana user interface at `http://[your.VM.IP]:5601/app/kibana`.
+<br></br>
+#### Install Filebeat
+1. In Terminal, run the Filebeat playbook: `ansible-playbook /etc/ansible/filebeat-playbook.yml`
+
+2. From your Kibana home page at `http://[your.VM.IP]:5601/app/kibana`, navigate to Add Logs > System Logs > Deb. Scroll down to the "Module status" section and click the "Check Data" button. If successful, you should see a "Data successfully received from this module" message:
+
+![Filebeat data received](./Images/filebeat-data-received.png)
+<br></br> 
+#### Install Metricbeat
+1. Run the Metricbeat playbook: `ansible-playbook /etc/ansible/metricbeat-playbook.yml`
+
+2. From your Kibana home page at `http://[your.VM.IP]:5601/app/kibana`, navigate to Add Metric Data > Docker Metrics > Deb. Scroll down to the "Module status" section and click the "Check Data" button. If successful, you should see a "Data successfully received from this module" message similar to the Filebeat screenshot above.
