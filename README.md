@@ -70,7 +70,7 @@ The open source IT engine Ansible was used to automate the configuration of the 
 
 The result of running `sudo docker ps` after successfully configuring the ELK deployment is shown below.
 
-![sudo docker ps output](./Images/docker_ps_output.png)
+![sudo docker ps output](./Images/sudo-docker-ps-output.png)
 
 ---
 
