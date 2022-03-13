@@ -93,3 +93,9 @@ The following Beats (open source data shippers) have been installed on these mac
 These Beats allow us to collect the following information from each machine:
 - Filebeat: Monitors log files, collects events, and forwards / centralizes log data.
 - Metricbeat: Monitors servers by collecting metrics from the operating system and services running on the server.
+
+### Using the Playbook
+
+In order to use the playbook, you will need to have an Ansible control node already configured.
+Assuming you have such a control node provisioned:
+
