@@ -25,7 +25,8 @@ D\*mn Vulnerable Web Application.
 Load balancing ensures that the application will be both highly available and responsive,
 in addition to restricting access to the frontend IP addresses of the virtual network.
 
-Integrating an ELK server allows users to easily monitor vulnerable virtual machines for changes to the file system and to analyze system metrics.
+Integrating an ELK server allows users to easily monitor vulnerable virtual machines for changes to
+the file system and to analyze system metrics.
 
 The configuration details of each machine are found below.
 
@@ -61,11 +62,11 @@ The open source IT engine Ansible was used to automate the configuration of the 
 No configuration was performed manually.
 Automating server configuration in this way has many advantages, such as:
 
-- Consistency: Simple to complex server configurations can be accurately deployed each time
-- Efficiency: Easily-run Ansible playbooks reduce the effort required to build environments and set up applications
-- Simplicity: Users can get up to speed and be productive quickly with the tool
+- Consistency: Server configurations from simple to complex can be precisely deployed every time
+- Efficiency: Easily-run Ansible playbooks reduce the effort required to create multiple environments and set up / update their applications
+- Simplicity: Users can get up to speed and be productive quickly
 
-The "02-config-elk-server-with-docker.yml" Ansible playbook performs the following tasks:
+The [ELK server Ansible playbook](./Ansible/02-config-elk-server-with-docker.yml) performs the following tasks:
 
 - Installs Docker
 - Installs the pip package management system
@@ -94,7 +95,8 @@ These Beats allow us to collect the following information from each machine:
 - Filebeat: Monitors log files, collects events, and forwards / centralizes log data.
 - Metricbeat: Monitors servers by collecting metrics from the operating system and every process running on the system.
 
-The data collected by these two Beats is used to build and share dashboards in Kibana that visualize system-level CPU usage, memory, file system, disk IO, network IO statistics,  common log formats, and more.
+The data collected by these two Beats is used to build and share dashboards in Kibana that visualize system-level CPU usage,
+memory, file system, disk IO, network IO statistics,  common log formats, and more.
 
 ### Using the Playbooks
 
